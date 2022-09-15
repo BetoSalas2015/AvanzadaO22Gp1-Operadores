@@ -1,4 +1,4 @@
-// Sesión 13 - 13/09/2022
+// Sesión 14 - 15/09/2022
 #include <stdio.h>		// Para printf() y scanf()
 #include <stdlib.h>		// Para system()
 #include "defs.h"
@@ -148,7 +148,7 @@ void multiplicativos()
 	//  Operador Módulo o residuo de la división  ( % ) 
 	PRINT1(d, a % b);
 }
-int main()
+void aditivos()
 {
 	//  Jerarquía nivel 4 - Aditivos
 	//  Operador suma  ( + ) - Binaria
@@ -158,6 +158,82 @@ int main()
 	//  Operador resta  ( - ) - Binaria
 	a = 20; b = 15;
 	PRINT1(d, a - b);
+}
+void desplazamiento()
+{
+	// Jerarquía nivel 5 - Operadores de desplazamiento
+	// Operador desplazamiento a la izquierda ( << )
+	a = 54;
+	PRINT2(d, a, a << 1);
+	PRINT2(d, a, a << 2);
+	PRINT2(d, a, a << 3);
+
+	a = 432;
+	PRINT2(d, a, a >> 1);
+	PRINT2(d, a, a >> 2);
+	PRINT2(d, a, a >> 3);
+}
+void relacionales()
+{
+	// Jerarquía nivel 6 - Operadores Relacionales
+	// OPerador Mayor que ( > )
+	a = 20; b = 30;
+	PRINT3(d, a , b, a > b);
+	// Operador Mayor o igual que ( >= )
+	PRINT3(d, a , b, a >= b);
+	// Operador menor que ( < )
+	PRINT3(d, a , b, a < b);
+	// Operador Menor o igual que ( <= )
+	PRINT3(d, a , b, a <= b);
+}
+void igualdad()
+{
+	// Jerarquía nivel 7 - Operadores de Igualdad
+	// Operdor igual a ( == )
+	a = 20; b = 30;
+	PRINT3(d, a, b, a == b);
+
+	// Operdor diferente de o No igual que ( != )
+	a = 20; b = 30;
+	PRINT3(d, a, b, a != b);
+}
+void de_bits()
+{
+	// Operadores de Bits
+	// Jerarquía nivel 8
+	// Operador  AND de Bits ( & ) - Binario
+	a = 53; b = 39;
+	PRINT3(d, a, b, a & b);
+
+	// Jerarquía nivel 9
+	// Operador OR de Bits ( | )
+	PRINT3(d, a, b, a | b);
+
+		// Jerarquía nivel 10
+	// Operador OR de Bits ( | )
+	PRINT3(d, a, b, a ^ b);
+}
+void logicos()
+{
+	// Operadores lógicos
+	// Jerarquía nivel 11
+	// Operador  AND lógico ( && ) 
+	a = 53; b = 0;
+	PRINT3(d, a, b, a && b);
+
+	// Jerarquía nivel 12
+	// Operador OR lógico ( || )
+	PRINT3(d, a, b, a || b);
+}
+int main()
+{
+	// Jerarquía Nivel 13 - Operadores condicional o ternario ( ? : )
+	printf("Dame 2 numeros separados por coma: ");
+	scanf("%d,%d", &a, &b);
+	( a < b ) ? PRINT1(d, a) : PRINT1(d, b);
+	( a &&	 b ) ? PRINT1(d, a) : PRINT1(d, b);
+
+
 
 	pausa;
 	return 0;
