@@ -1,4 +1,4 @@
-// Sesión 14 - 15/09/2022
+// Sesión 15 - 20/09/2022
 #include <stdio.h>		// Para printf() y scanf()
 #include <stdlib.h>		// Para system()
 #include "defs.h"
@@ -225,15 +225,88 @@ void logicos()
 	// Operador OR lógico ( || )
 	PRINT3(d, a, b, a || b);
 }
-int main()
+void condicional()
 {
 	// Jerarquía Nivel 13 - Operadores condicional o ternario ( ? : )
 	printf("Dame 2 numeros separados por coma: ");
 	scanf("%d,%d", &a, &b);
 	( a < b ) ? PRINT1(d, a) : PRINT1(d, b);
 	( a &&	 b ) ? PRINT1(d, a) : PRINT1(d, b);
+}
+void asignación()
+{
+// Jerarquía nivel 14 - Operadores de Asignación
+	//  Operador asignación Simple ( = )
+	a = 20;
+	b = 30;		// Asignación explicita 
+	a++;		// Asigación implícita
+	a = b = c = d = 50;	//  Asignación multiple
+	PRINT4(d, a, b, c, d);
 
+	// Operadores de asignación compuesta  (  varios ) 
+	a = 20; b = 30;
+	PRINT1(d, a += b);			// Suma Compuesta
+	PRINT2(d, a, b);
 
+	a = 20; b = 30;
+	PRINT1(d, a -= b);			// Resta Compuesta
+	PRINT2(d, a, b);
+
+	a = 20; b = 30;
+	PRINT1(d, a *= b);			// Multiplicación Compuesta
+	PRINT2(d, a, b);
+
+	a = 20; b = 30;
+	PRINT1(d, a /= b);			// División Compuesta
+	PRINT2(d, a, b);
+	
+	a = 20; b = 30;
+	PRINT1(d, a %= b);			// Módulo Compuesto
+	PRINT2(d, a, b);
+
+	a = 20; b = 3;
+	PRINT1(d, a >>= b);			// Desplazamiento a la derecha Compuesto
+	PRINT2(d, a, b);
+
+	a = 20; b = 3;
+	PRINT1(d, a <<= b);			// Desplazamiento a la izquierda Compuesto
+	PRINT2(d, a, b);
+
+	a = 20; b = 30;
+	PRINT1(d, a &= b);			// AND de Bits Compuesto
+	PRINT2(d, a, b);
+
+	a = 20; b = 30;
+	PRINT1(d, a |= b);			// OR de Bits Compuesto
+	PRINT2(d, a, b);
+
+	a = 20; b = 30;
+	PRINT1(d, a ^= b);			// XOR de Bits Compuesta
+	PRINT2(d, a, b);
+}
+void coma()
+{
+	// Jerarquía nivel 15 - Operador Coma ( , )
+	int x, y, z;
+	a = 30, b = 20;
+	PRINT2(d, a, b);
+
+}
+
+int main()
+{
+	//  Ejercicios operadores
+	a = 3; b = 0; c = 1; d = 5; 
+	PRINT1(d, !!5 < a++ );
+	PRINT4(d, a, b, c, d);
+
+	a = 3; b = 0; c = 1; d = 5; 
+	PRINT1(d, !a++ == !b-- );
+	PRINT4(d, a, b, c, d);
+
+	a = 3; b = 0; c = 1; d = 5; 
+	PRINT1(d, !a | b++ );
+	PRINT4(d, a, b, c, d);
 
 	pausa;
 	return 0;
